@@ -1,19 +1,34 @@
+console.log("connected");
+
 // declare all var
 const backEndUrl = 'http://localhost:3000';
 const registerForm = document.getElementById('registerForm');
-let fullName = document.getElementById('name');
-let email = document.getElementById('email');
-let mobile = document.getElementById('mobile');
+// let fullName = document.getElementById('name');
+// let email = document.getElementById('email');
+// let mobile = document.getElementById('mobile');
+
+let fullName = document.getElementById('Name');
+let dob = document.getElementById('dob');
+let email = document.getElementById('Email');
+let mobile = document.getElementById('number');
+let compSub = document.getElementById('compSub');
+let comp = document.getElementById('Message');
 
 registerForm.addEventListener( 'submit', async (event) => {
     event.preventDefault(); // stop default behaviour / stop page refresh in this case
-    if( fullName.value && email.value && mobile.value ) {
+    if( fullName.value && email.value && mobile.value && compSub.value && comp.value  ) {
         // call backend
         // step - 1 - create payload
         const payload = {
+            // name: fullName.value,
+            // email: email.value,
+            // mobile: mobile.value
             name: fullName.value,
+            dob: dob.value,
             email: email.value,
-            mobile: mobile.value
+            mobile: mobile.value,
+            compSub: compSub.value,
+            comp: comp.value
         }
 
         // step - 2 - send payload to the server
@@ -31,9 +46,15 @@ registerForm.addEventListener( 'submit', async (event) => {
             console.log(data);
             // show success message
             alert('User registered successfully');
-            fullName.value = '';
-            email.value = '';
-            mobile.value = '';
+            // fullName.value = '';
+            // email.value = '';
+            // mobile.value = '';
+            fullName.value='';
+            dob.value='';
+            email.value='';
+            mobile.value='';
+            compSub.value='';
+            comp.value='';
         } else {
             if( data.err ) {
                 alert(data.err.message);
@@ -46,3 +67,4 @@ registerForm.addEventListener( 'submit', async (event) => {
         alert('Please Fill All The Fields');
     }
 } )
+

@@ -8,10 +8,15 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
         validate(value) {
-            if ( value.length < 3 ) {
-                throw new Error('Name Must Be More than 3 digits');
+            if (value.length < 3) {
+                throw new Error('Name Must Be More than 3 alphabets');
             }
         }
+    },
+    dob: {
+        type: Date,
+        required: true,
+        trim: true,
     },
     email: {
         type: String,
@@ -19,25 +24,40 @@ const userSchema = new mongoose.Schema({
         trim: true,
         unique: true,
         validate(value) {
-            if ( !validator.isEmail(value) ) {
+            if (!validator.isEmail(value)) {
                 throw new Error('Invalid Email');
             }
         }
     },
     mobile: {
+        type: Number,
+        required: true,
+        trim: true,
+        // validate(value) {
+        //     if (value.length != 10) {
+        //         console.log(value);
+        //         throw new Error('Number must be 10 digits', value.length);
+        //     }
+        // }
+
+    },
+    compSub: {
         type: String,
         required: true,
         trim: true,
-        unique: true,
-        validate(value) {
-            if ( value.length != 10 ) {
-                throw new Error('Mobile Number Should be of 10 digits');
-            }
-        }
+
+
+    },
+    comp: {
+        type: String,
+        required: true,
+        trim: true,
+
+
     }
 }, {
     timestamps: true
-} );
+});
 
 const userModel = mongoose.model('users', userSchema, 'user');
 
