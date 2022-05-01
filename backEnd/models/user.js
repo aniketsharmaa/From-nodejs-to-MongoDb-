@@ -59,6 +59,6 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 });
 
-const userModel = mongoose.model('users', userSchema, 'user');
+const userModel = mongoose.model('complaints', userSchema );
 
 module.exports = userModel;

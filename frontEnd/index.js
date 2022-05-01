@@ -1,4 +1,4 @@
-console.log("connected");
+
 
 // declare all var
 const backEndUrl = 'http://localhost:3000';
@@ -45,7 +45,7 @@ registerForm.addEventListener( 'submit', async (event) => {
         if( response.ok ) {
             console.log(data);
             // show success message
-            alert('User registered successfully');
+            alert('Complaint registered successfully.' + 'The status will be updated on '+ mobile.value + 'Thanks!!');
             // fullName.value = '';
             // email.value = '';
             // mobile.value = '';
