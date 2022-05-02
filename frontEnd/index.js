@@ -45,7 +45,7 @@ registerForm.addEventListener( 'submit', async (event) => {
         if( response.ok ) {
             console.log(data);
             // show success message
-            alert('Complaint registered successfully.' + 'The status will be updated on '+ mobile.value + 'Thanks!!');
+            alert('Complaint registered successfully.' + 'The status will be updated on '+ mobile.value + ' Thanks!!');
             // fullName.value = '';
             // email.value = '';
             // mobile.value = '';
