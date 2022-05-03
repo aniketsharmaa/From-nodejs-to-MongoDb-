@@ -1,10 +1,8 @@
-const { Db } = require('mongodb');
 const mongoose = require('mongoose');
 const validator = require('validator');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const userSchema = new mongoose.Schema({
-    
-  
     name: {
         type: String,
         required: true,
@@ -35,20 +33,17 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: true,
         trim: true,
-        // validate(value) {
-        //     if (value.length != 10) {
-        //         console.log(value);
-        //         throw new Error('Number must be 10 digits', value.length);
-        //     }
-        // }
+        validate(value) {
+            if (value.length < 10) {
+                throw new Error('Mobile Number Must Be Of 10 digits');
+            }
+        }
 
     },
     compSub: {
         type: String,
         required: true,
         trim: true,
-
-
     },
     comp: {
         type: String,
@@ -56,17 +51,18 @@ const userSchema = new mongoose.Schema({
         trim: true,
 
 
+    },
+    complaintNumberr: {
+        type: Number,
+        default: 1
     }
-    // complaintNumber: {
-    //     type: Number,
-        
-    // }
-   
+
 }, {
     timestamps: true,
-    indexedDB:true
+    indexedDB: true
 });
+userSchema.plugin(AutoIncrement, {inc_field: 'complaintNumberr'});
+const userModel = mongoose.model('complaints', userSchema);
 
-const userModel = mongoose.model('complaints', userSchema );
 
 module.exports = userModel;

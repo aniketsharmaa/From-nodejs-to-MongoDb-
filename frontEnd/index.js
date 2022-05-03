@@ -13,19 +13,19 @@ let email = document.getElementById('Email');
 let mobile = document.getElementById('number');
 let compSub = document.getElementById('compSub');
 let comp = document.getElementById('Message');
-let complaintNumber = 10;
-console.log(complaintNumber);
+let message = document.querySelector('.message');
+
 
 // let complaint = function (){
 //     for(let i=1;i<101;i++){
 //         return i;
-        
+
 //     }
 // }
 
-registerForm.addEventListener( 'submit', async (event) => {
+registerForm.addEventListener('submit', async (event) => {
     event.preventDefault(); // stop default behaviour / stop page refresh in this case
-    if( fullName.value && email.value && mobile.value && compSub.value && comp.value  ) {
+    if (fullName.value && email.value && mobile.value && compSub.value && comp.value) {
         // call backend
         // step - 1 - create payload
         const payload = {
@@ -37,14 +37,12 @@ registerForm.addEventListener( 'submit', async (event) => {
             email: email.value,
             mobile: mobile.value,
             compSub: compSub.value,
-            comp: comp.value,
-            // complaintNumber: complaintNumber.value,
-            
+            comp: comp.value
         }
 
         // step - 2 - send payload to the server
         let response = await fetch(
-            `${backEndUrl}/register`, 
+            `${backEndUrl}/register`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -53,23 +51,23 @@ registerForm.addEventListener( 'submit', async (event) => {
         )
         console.log(response);
         let data = await response.json();
-        if( response.ok ) {
+        if (response.ok) {
             console.log(data);
             // show success message
-            alert('Complaint registered successfully.' + 'The status will be updated on '+ mobile.value + ' Thanks!!');
+            alert('Complaint registered successfully.' + 'The status will be updated on ' + mobile.value + ' Thanks!!');
             // fullName.value = '';
             // email.value = '';
             // mobile.value = '';
-            fullName.value='';
-            dob.value='';
-            email.value='';
-            mobile.value='';
-            compSub.value='';
-            comp.value='';
-            // complaintNumber='';
-            
+            fullName.value = '';
+            dob.value = '';
+            email.value = '';
+            mobile.value = '';
+            compSub.value = '';
+            comp.value = '';
+            complaintNumberr='';
+
         } else {
-            if( data.err ) {
+            if (data.err) {
                 alert(data.err.message);
             } else {
                 console.log(data);
@@ -79,5 +77,29 @@ registerForm.addEventListener( 'submit', async (event) => {
     } else {
         alert('Please Fill All The Fields');
     }
-} )
+});
 
+// check if backend is online
+window.onload = async function() {
+    try {
+        let response = await fetch(
+            `${backEndUrl}`,
+            {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            }
+        );
+        if(!response.ok) {
+            document.getElementById('button').disabled = true;
+            message.classList.add('alert', 'alert-danger')
+            message.innerText = "Backend Is Offline";
+            message.style.display = 'block';
+        }
+    } catch(err) {
+        document.getElementById('button').disabled = true;
+        message.classList.add('alert','alert-danger')
+        message.innerText = "Backend Is Offline";
+        message.style.display = 'block';
+    }
+    
+};
