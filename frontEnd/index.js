@@ -13,6 +13,15 @@ let email = document.getElementById('Email');
 let mobile = document.getElementById('number');
 let compSub = document.getElementById('compSub');
 let comp = document.getElementById('Message');
+let complaintNumber = 10;
+console.log(complaintNumber);
+
+// let complaint = function (){
+//     for(let i=1;i<101;i++){
+//         return i;
+        
+//     }
+// }
 
 registerForm.addEventListener( 'submit', async (event) => {
     event.preventDefault(); // stop default behaviour / stop page refresh in this case
@@ -28,7 +37,9 @@ registerForm.addEventListener( 'submit', async (event) => {
             email: email.value,
             mobile: mobile.value,
             compSub: compSub.value,
-            comp: comp.value
+            comp: comp.value,
+            // complaintNumber: complaintNumber.value,
+            
         }
 
         // step - 2 - send payload to the server
@@ -55,6 +66,8 @@ registerForm.addEventListener( 'submit', async (event) => {
             mobile.value='';
             compSub.value='';
             comp.value='';
+            // complaintNumber='';
+            
         } else {
             if( data.err ) {
                 alert(data.err.message);

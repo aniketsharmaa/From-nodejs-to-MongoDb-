@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const userSchema = new mongoose.Schema({
+    
+  
     name: {
         type: String,
         required: true,
@@ -55,8 +57,14 @@ const userSchema = new mongoose.Schema({
 
 
     }
+    // complaintNumber: {
+    //     type: Number,
+        
+    // }
+   
 }, {
-    timestamps: true
+    timestamps: true,
+    indexedDB:true
 });
 
 const userModel = mongoose.model('complaints', userSchema );
