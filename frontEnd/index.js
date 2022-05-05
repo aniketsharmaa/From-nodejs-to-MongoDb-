@@ -16,12 +16,7 @@ let comp = document.getElementById('Message');
 let message = document.querySelector('.message');
 
 
-// let complaint = function (){
-//     for(let i=1;i<101;i++){
-//         return i;
 
-//     }
-// }
 
 registerForm.addEventListener('submit', async (event) => {
     event.preventDefault(); // stop default behaviour / stop page refresh in this case

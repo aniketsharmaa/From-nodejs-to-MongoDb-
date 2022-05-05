@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
         validate(value) {
-            if (value.length < 3) {
+            if (value.length < 2) {
                 throw new Error('Name Must Be More than 3 alphabets');
             }
         }
