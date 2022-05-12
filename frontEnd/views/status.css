@@ -1,0 +1,9 @@
+.container-fluid{
+    height: 9rem;
+    border-color: 3px solid black;
+}
+.row{
+    height: 5rem;
+    width: 19rem;
+    border-color: 3px solid red;
+}
