@@ -3,9 +3,6 @@
 // declare all var
 const backEndUrl = 'http://localhost:3000';
 const registerForm = document.getElementById('registerForm');
-// let fullName = document.getElementById('name');
-// let email = document.getElementById('email');
-// let mobile = document.getElementById('mobile');
 
 let fullName = document.getElementById('Name');
 let dob = document.getElementById('dob');
@@ -14,7 +11,6 @@ let mobile = document.getElementById('number');
 let compSub = document.getElementById('compSub');
 let comp = document.getElementById('Message');
 let message = document.querySelector('.message');
-
 
 
 
@@ -59,7 +55,7 @@ registerForm.addEventListener('submit', async (event) => {
             mobile.value = '';
             compSub.value = '';
             comp.value = '';
-            complaintNumberr='';
+            complaintNumberr = '';
 
         } else {
             if (data.err) {
@@ -75,7 +71,7 @@ registerForm.addEventListener('submit', async (event) => {
 });
 
 // check if backend is online
-window.onload = async function() {
+window.onload = async function () {
     try {
         let response = await fetch(
             `${backEndUrl}`,
@@ -84,17 +80,17 @@ window.onload = async function() {
                 headers: { 'Content-Type': 'application/json' }
             }
         );
-        if(!response.ok) {
+        if (!response.ok) {
             document.getElementById('button').disabled = true;
             message.classList.add('alert', 'alert-danger')
             message.innerText = "Backend Is Offline";
             message.style.display = 'block';
         }
-    } catch(err) {
+    } catch (err) {
         document.getElementById('button').disabled = true;
-        message.classList.add('alert','alert-danger')
+        message.classList.add('alert', 'alert-danger')
         message.innerText = "Backend Is Offline";
         message.style.display = 'block';
     }
-    
+
 };

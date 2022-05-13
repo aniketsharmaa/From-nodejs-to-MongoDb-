@@ -10,9 +10,7 @@ async function loadTable() {
     loader.style.display = 'none';
     let { user: complaints } = await response.json();
     console.log(complaints)
-
-
-    
+   
     // table render
     tableData.innerHTML = '';
     complaints.map( function(complaint) {

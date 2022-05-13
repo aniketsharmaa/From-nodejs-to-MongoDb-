@@ -1,9 +1,23 @@
-.container-fluid{
-    height: 9rem;
-    border-color: 3px solid black;
+body{
+    background-color: #fff;
+    margin: 0px;
+    padding: 0px;
+
 }
-.row{
-    height: 5rem;
-    width: 19rem;
-    border-color: 3px solid red;
+.center-box{
+    min-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 5px;
+    min-height: 200px;
+
+}
+
+@media (max-width:500px){
+    .center-box{
+        min-width: 90%;
+    }
 }
