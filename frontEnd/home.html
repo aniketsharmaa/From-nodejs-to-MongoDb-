@@ -22,13 +22,16 @@
   <link rel="stylesheet" href="views/home.css">
 
   <title>Grievance System!</title>
+
+<link rel="shortcut icon" type="" href="images/favicon2.jpg"/>
+
 </head>
 
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="home.html">BSPHCL</a>
+      <a class="navbar-brand" id="BSPHCL" href="home.html">BSPHCL</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -68,7 +71,7 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
         aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner" id="mainSlideHome">
       <div class="carousel-item active">
         <img src="images/mainSlide2.jpg" class="d-block w-100" alt="...">
       </div>
@@ -76,7 +79,7 @@
         <img src="images/mainSlide1.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="images/mainSlide3.jpg" class="d-block w-100" alt="...">
+        <img src="images/mainSlide03.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -98,32 +101,40 @@
   <div class="container">
     <div class="row">
       <div class="col-4">
-        <div class="card">
-          <img src="images/homePage1.jfif" class="card-img-top" alt="...">
-          <div class="card-body">
+        <div class="card shadow">
+          <div class="inner">
+            <img src="images/cards-complaints.png" class="card-img-top " alt="...">
+          </div>
+          <div class="card-body text-center">
             <h5 class="card-title">Lodge Your Grievance</h5>
-            <p class="card-text">Register Your New Complaint Here.</p>
-            <a href="index.html" id="button" class="btn btn-primary text-center">CLICK HERE</a>
+            <p class="card-text">Register your any complaint.</p>
+            <a href="index.html" id="button" class="btn btn-primary text-center">Register</a>
           </div>
         </div>
       </div>
       <div class="col-4">
-        <div class="card">
-          <img src="images/homePage1.jfif" class="card-img-top" alt="...">
-          <div class="card-body">
+        <div class="card shadow">
+          <div class="inner">
+            <img src="images/cards-search.png" class="card-img-top" alt="...">
+
+          </div>
+          <div class="card-body text-center">
             <h5 class="card-title">View Grievance Status</h5>
-            <p class="card-text">View Stauts Of Registerd Complaints</p>
-            <a id="button" href="status.html" class="btn btn-primary">CLICK HERE</a>
+            <p class="card-text">View status of your existing complaints.</p>
+            <a id="button" href="status.html" class="btn btn-primary">View</a>
           </div>
         </div>
       </div>
       <div class="col-4">
-        <div class="card">
-          <img src="images/homePage1.jfif" class="card-img-top" alt="...">
-          <div class="card-body">
+        <div class="card shadow">
+          <div class="inner">
+
+            <img src="images/cards-admin.png" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body text-center">
             <h5 class="card-title">Officer Login</h5>
-            <p class="card-text">Resolve existing Complaints</p>
-            <a id="button" href="admin.html" class="btn btn-primary">CLICK HERE</a>
+            <p class="card-text">Resolve existing complaints</p>
+            <a id="button" href="admin.html" class="btn btn-primary">Solve</a>
           </div>
         </div>
       </div>
