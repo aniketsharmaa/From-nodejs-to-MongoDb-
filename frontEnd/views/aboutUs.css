@@ -1,0 +1,16 @@
+#aboutUs{
+    margin-top: 6%;
+    padding: 20px;
+}
+body{
+    background-color: rgb(226, 241, 241);
+}
+#heading{
+    margin-top:3% ;
+    font-size: 60px;
+    height: 10%;
+}
+#cont{
+    border: 2px solid black;
+    padding:5%;
+}

@@ -49,12 +49,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-
-
     },
     complaintNumberr: {
         type: Number,
         default: 1
+    },
+    status: {
+        type: String,
+        enum: [ 'pending', 'solved', 'partially_solved', 'not_feasible' ],
+        default: 'pending'
     }
 
 }, {

@@ -1,24 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- HomePage CSS  -->
-    <link rel="stylesheet" href="Style/homePage.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Complaint!</title>
-  </head>
-  <body>
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Footer CSS -->
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet" />
+
+  <!-- HomePage CSS  -->
+  <link rel="stylesheet" href="views/home.css">
+
+  <title>Grievance System!</title>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">BHSPL</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="home.html">BSPHCL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -26,29 +38,35 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          
-       
+
           <li class="nav-item">
-            <a class="nav-link disabled">About Us</a>
+            <a href="status.html" class="nav-link disabled">View Status</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="aboutUs.html" class="nav-link disabled">About Us</a>
           </li>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search your queries" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-dark" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
 
-<!-- MainSlide -->
+  <!-- MainSlide -->
 
-<div class="container">
+  <!-- <div class="container-fluid" id="mainSlide"> -->
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -61,63 +79,106 @@
         <img src="images/mainSlide3.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+    <!-- </div> -->
+
   </div>
 
-</div>
-
-<br>
+  <br>
   <!-- Cards -->
-<div class="container">
+  <div class="container">
     <div class="row">
-        <div class="col-4">
-            <div class="card" >
-                <img src="images/homePage1.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Lodge Your Grievance</h5>
-                  <p class="card-text">Register Your New Complaint Here.</p>
-                  <a href="index.html" class="btn btn-primary">CLICK HERE</a>
-                </div>
-              </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="images/homePage1.jfif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Lodge Your Grievance</h5>
+            <p class="card-text">Register Your New Complaint Here.</p>
+            <a href="index.html" id="button" class="btn btn-primary text-center">CLICK HERE</a>
+          </div>
         </div>
-        <div class="col-4">
-            <div class="card" >
-                <img src="images/homePage1.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">View Grievance Status</h5>
-                  <p class="card-text">View Stauts Of Registerd Complaints</p>
-                  <a href="status.html" class="btn btn-primary">CLICK HERE</a>
-                </div>
-              </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="images/homePage1.jfif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">View Grievance Status</h5>
+            <p class="card-text">View Stauts Of Registerd Complaints</p>
+            <a id="button" href="status.html" class="btn btn-primary">CLICK HERE</a>
+          </div>
         </div>
-        <div class="col-4">
-            <div class="card" >
-                <img src="images/homePage1.jfif" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Officer Login</h5>
-                  <p class="card-text">Resolve existing Complaints</p>
-                  <a href="admin.html" class="btn btn-primary">CLICK HERE</a>
-                </div>
-              </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="images/homePage1.jfif" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Officer Login</h5>
+            <p class="card-text">Resolve existing Complaints</p>
+            <a id="button" href="admin.html" class="btn btn-primary">CLICK HERE</a>
+          </div>
         </div>
+      </div>
 
     </div>
-</div>
-
-<!-- added blank space -->
-<div class="container-fluid">
-
-</div>
+  </div>
+  </div>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-  </body>
+  <!-- added Footer -->
+
+  <footer id="footer" class="bg-primary text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <a href="aboutUs.html">About Us</a>
+      <a class="text-white" href="http://www.bsphcl.co.in/">BSPHCL Website</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

@@ -17,9 +17,9 @@
 <body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">BHSPL</a>
+      <a class="navbar-brand" href="home.html">BSPHCL</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,9 +27,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link disabled" aria-current="page" href="home.html">Home</a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link active">View Status</a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link disabled">About Us</a>
@@ -37,30 +40,32 @@
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search your queries" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-dark" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
-
+<div class="container-fluid ">
+  <h2 id="heading">View Your Status</h2>
+</div>
   <!-- Form Container  -->
   <div class="container">
 
-    <div class="center-box">
-      <form id="statusForm" class="form-class py-2 " method="post" >
+    <div class="center-box" id="centerBox">
+      <form id="statusForm" class="form-class py-2 " method="post">
         <div class="mb-3">
-          <label for="" class="form-label">Mobile number</label>
-          <input type="" class="form-control" id="mobile" aria-describedby="">
+          <label class="form-label font-weight-bold">Mobile Number</label>
+          <input placeholder="Enter your registered number" class="form-control" id="mobile" aria-describedby="">
         </div>
 
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Complaint Number </label>
-          <input type="number" class="form-control" id="complaintNumber">
+          <label for="exampleInputPassword1" class="form-label "> Complaint Number </label>
+          <input placeholder="Enter your complaint number" type="number" class="form-control" id="complaintNumber">
         </div>
-
-        <div class="form-group ">
-          <input class="btn-primary" type="button" value="Click Me" onclick="display()">
-      </div>
+        
+        <div class="form-group text-right ">
+          <input id ="button" class="btn btn-primary" type="button" value="Check Status" onclick="display()">
+        </div>
       </form>
     </div>
   </div>

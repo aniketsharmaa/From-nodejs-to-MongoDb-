@@ -44,11 +44,11 @@ registerForm.addEventListener('submit', async (event) => {
         let data = await response.json();
         if (response.ok) {
             console.log(data);
+
             // show success message
-            alert('Complaint registered successfully.' + 'The status will be updated on ' + mobile.value + ' Thanks!!');
-            // fullName.value = '';
-            // email.value = '';
-            // mobile.value = '';
+
+            alert('Complaint registered successfully.' + 'The status will be updated on ' + mobile.value + '. Your Complaint Number is '+ data.complaintNumberr + ' Thanks!!' );
+
             fullName.value = '';
             dob.value = '';
             email.value = '';

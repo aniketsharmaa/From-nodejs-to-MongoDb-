@@ -62,6 +62,49 @@ app.get("/complaints", async (req, res) => {
   }
 });
 
+app.put( '/complaints/:complaintNumber/update', async ( req, res ) => {
+
+  const { complaintNumber } = req.params;
+  const { status } = req.body;
+
+  const statusArray = [ 'pending', 'solved', 'partially_solved', 'not_feasible' ];
+
+  if( !status || !statusArray.includes(status) ) {
+    return res.status(422).json({ message: "A Valid Status is required" })
+  }
+
+  if( !complaintNumber ) {
+    return res.status(422).json({ message: "Complaint Number is required" })
+  }
+
+  try {
+
+    // update status
+    let updateStatus = await userModel.updateOne({ complaintNumberr: complaintNumber }, { status })
+    let matchedDoc = updateStatus.matchedCount;
+    let updatedDoc = updateStatus.modifiedCount;
+    if( matchedDoc == 0 ) {
+      return res.status(404).json({
+        message: "Complaint Not Found",
+      });
+    }
+
+    if( updatedDoc == 0 ) {
+      return res.status(400).json({
+        message: "Failed To Update",
+      });
+    }
+    res.status(200).json({
+      message: "OK"
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: "Something went wrong",
+    });
+  }
+} )
+
 
 app.listen("3000", () => {
   console.log("Server is up on port 3000");
