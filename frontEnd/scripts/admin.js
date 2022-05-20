@@ -52,7 +52,7 @@ window.onload = async function () {
 
 setInterval(async () => {
   await loadTable();
-}, 60000);
+}, 90000);
 
 async function changeStatus(value, complaintNumber) {
   // update status in the backend

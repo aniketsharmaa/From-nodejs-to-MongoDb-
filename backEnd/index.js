@@ -1,14 +1,17 @@
 const express = require("express");
 
+
 const cors = require("cors"); //Cross-Origin Resource Sharing (CORS)
 
 require("./mongodb");
 
-// model imports
 const userModel = require("./models/user");
 const { Admin } = require("mongodb");
 
 const app = express();
+
+// instantiate wabot
+
 
 // use client side data
 app.use(express.json());
@@ -104,7 +107,6 @@ app.put( '/complaints/:complaintNumber/update', async ( req, res ) => {
     });
   }
 } )
-
 
 app.listen("3000", () => {
   console.log("Server is up on port 3000");
